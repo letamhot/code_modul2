@@ -1,6 +1,9 @@
 <?php
 
-class Rectangle extends Shape implements Resizeable {
+include_once ('Shape.php');
+
+class Rectangle extends Shape
+{
     public $width;
     public $height;
 
@@ -11,13 +14,7 @@ class Rectangle extends Shape implements Resizeable {
         $this->height = $height;
     }
 
-    public function resizeAble($size)
-    {
-        $this->width *= 1 + ($size / 100);
-        $this->height *= 1 + ($size / 100);
-    }
-
-    public function calculateArea() {
+    public function calculateArea(){
         return $this->height * $this->width;
     }
 
@@ -25,5 +22,3 @@ class Rectangle extends Shape implements Resizeable {
         return ($this->height + $this->width) * 2;
     }
 }
-
-?>

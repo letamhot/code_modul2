@@ -1,6 +1,6 @@
 <?php
 
-class Circle extends Shape implements Resizeable {
+class Circle extends Shape {
     public $radius;
 
     public function __construct($name, $radius)
@@ -9,16 +9,13 @@ class Circle extends Shape implements Resizeable {
         $this->radius = $radius;
     }
 
-    public function resizeAble($size)
+    public function calculateArea()
     {
-        $this->radius *= 1 + ($size / 100);
-    }
-
-    public function calculateArea(){
         return pi() * pow($this->radius, 2);
     }
 
-    public function calculatePerimeter(){
+    public function calculatePerimeter()
+    {
         return pi() * $this->radius * 2;
     }
 }
